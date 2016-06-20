@@ -1,0 +1,9 @@
+name: yiguyijin
+version:  1
+
+libraries:
+- name: webpy
+  version: "0.21"
+- name: lxml
+  version: "2.3.4"
+
