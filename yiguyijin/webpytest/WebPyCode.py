@@ -1,7 +1,7 @@
 import web
 
 urls = (
-    '/(.*)', 'hello'
+    '/weixin', 'hello'
 )
 
 class hello:

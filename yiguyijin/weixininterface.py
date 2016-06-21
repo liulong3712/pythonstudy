@@ -48,7 +48,12 @@ class WeixinInterface:
         resultContent += testTranslate.getTranslateResult()
         return self.render.reply_text(fromUser,toUser,int(time.time()),u"翻译结果：\n"+resultContent)
 
+urls = (
+    '/weixin', 'WeixinInterface'
+)
 if __name__ == "__main__":
+    web.run(urls, globals())
+    '''
     import chardet
     #print chardet.detect(word1)
     content = u'试试'
@@ -58,3 +63,4 @@ if __name__ == "__main__":
     #resultContent = ""
     #resultContent += testTranslate.getTranslateResult()
     print resultContent
+    '''
