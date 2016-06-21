@@ -18,11 +18,18 @@ class WeixinInterface:
     def GET(self):
         #获取输入参数
         data = web.input()
-	print data
+        print type(data)
+        print data
+        if(data.has_key('openid')):
+            echostr = data.openid
+        elif(data.has_key('echostr')):
+            echostr = data.echostr
+        else:
+            echostr = 'error'
         signature = data.signature
         timestamp = data.timestamp
         nonce = data.nonce
-        echostr = data.openid
+
         #自己的token
         token = "yiguyijin" #这里改写你在微信公众平台里输入的token
         #字典序排序
