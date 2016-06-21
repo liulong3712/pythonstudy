@@ -18,6 +18,7 @@ class WeixinInterface:
     def GET(self):
         #获取输入参数
         data = web.input()
+	print data
         signature = data.signature
         timestamp = data.timestamp
         nonce = data.nonce
@@ -52,7 +53,9 @@ urls = (
     '/weixin', 'WeixinInterface'
 )
 if __name__ == "__main__":
-    web.run(urls, globals())
+    #web.run(urls, globals())
+    app = web.application(urls, globals())
+    app.run()
     '''
     import chardet
     #print chardet.detect(word1)
