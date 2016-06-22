@@ -33,6 +33,9 @@ for mystring in soup.stripped_strings:
     print repr(mystring)
 for sibling in soup.a.next_siblings:
     print repr(sibling)
+print '#############################'
+print  soup.a.attrs['href']
+print soup.a.string
 print '--------------------------'
 print soup.find_all('p')
 for tag in soup.find_all(True):
@@ -41,6 +44,12 @@ print '-----------------------------'
 def has_class_but_no_id(tag):
     return tag.has_attr('class') and not tag.has_attr('id')
 print soup.find_all(has_class_but_no_id)
+print soup.find_all(text='sister')
+print soup.find('a')
+print soup.a
+print soup.a.find_next_siblings('a')
+print soup.select('title')
+print soup.select('a')
 '''
 old_url = 'http://www.jiyoutang.com'
 urlreponse = urllib2.urlopen(old_url).read()
